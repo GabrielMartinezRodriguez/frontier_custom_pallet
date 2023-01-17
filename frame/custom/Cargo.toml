@@ -1,0 +1,25 @@
+[package]
+name = "pallet-custom"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+frame-support = { workspace = true }
+frame-system = { workspace = true }
+scale-codec = { package = "parity-scale-codec", workspace = true }
+scale-info = { workspace = true }
+sp-arithmetic = { workspace = true }
+sp-core = { version = "7.0.0", git = "https://github.com/paritytech/substrate", branch = "master", default-features = false }
+
+[features]
+default = ["std"]
+std = [
+  "scale-codec/std",
+  "scale-info/std",
+  "frame-support/std",
+  "frame-system/std",
+  "sp-arithmetic/std",
+  "sp-core/std"
+]
